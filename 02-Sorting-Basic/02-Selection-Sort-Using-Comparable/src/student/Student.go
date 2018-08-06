@@ -3,7 +3,6 @@ package student
 import "fmt"
 
 // 根据原生 sort 的接口实现方法
-
 type Student struct {
 	Name  string
 	Score int

@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"practice/Play-with-Algorithms/02-Sorting-Basic/04-Selection-Sort-Detect-Performance/src/helper"
