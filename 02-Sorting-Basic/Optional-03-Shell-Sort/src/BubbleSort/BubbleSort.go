@@ -10,6 +10,7 @@ func Sort(arr []int, length int) {
 				swapped = true
 			}
 		}
+		length--
 		// 循环中没有数据交换，说明已正序，停止循环
 		if !swapped {
 			break
