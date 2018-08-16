@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"practice/Play-with-Algorithms/03-Sorting-Advance/06-Quick-Sort/src/helper"
-	"practice/Play-with-Algorithms/03-Sorting-Advance/05-Quick-Sort/src/MergeSort2"
-	"practice/Play-with-Algorithms/03-Sorting-Advance/05-Quick-Sort/src/QuickSort"
+	"practice/Play-with-Algorithms/03-Sorting-Advance/06-Quick-Sort-Deal-With-Nearly-Ordered-Array/src/helper"
+	"practice/Play-with-Algorithms/03-Sorting-Advance/06-Quick-Sort-Deal-With-Nearly-Ordered-Array/src/MergeSort2"
+	"practice/Play-with-Algorithms/03-Sorting-Advance/06-Quick-Sort-Deal-With-Nearly-Ordered-Array/src/QuickSort"
 )
 
 // 比较Merge Sort和Quick Sort两种排序算法的性能效率
