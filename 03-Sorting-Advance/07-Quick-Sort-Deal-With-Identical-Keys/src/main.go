@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"practice/Play-with-Algorithms/03-Sorting-Advance/06-Quick-Sort-Deal-With-Nearly-Ordered-Array/src/helper"
-	"practice/Play-with-Algorithms/03-Sorting-Advance/06-Quick-Sort-Deal-With-Nearly-Ordered-Array/src/MergeSort2"
-	"practice/Play-with-Algorithms/03-Sorting-Advance/06-Quick-Sort-Deal-With-Nearly-Ordered-Array/src/QuickSort"
+	"practice/Play-with-Algorithms/03-Sorting-Advance/07-Quick-Sort-Deal-With-Identical-Keys/src/helper"
+	"practice/Play-with-Algorithms/03-Sorting-Advance/07-Quick-Sort-Deal-With-Identical-Keys/src/MergeSort2"
+	"practice/Play-with-Algorithms/03-Sorting-Advance/07-Quick-Sort-Deal-With-Identical-Keys/src/QuickSort"
+	"practice/Play-with-Algorithms/03-Sorting-Advance/07-Quick-Sort-Deal-With-Identical-Keys/src/QuickSort2Ways"
 )
 
 // 比较Merge Sort和Quick Sort两种排序算法的性能效率
@@ -18,10 +19,13 @@ func main() {
 
 	arr1 := helper.GenerateRandomArray(N, 0, N)
 	arr2 := make([]int, N)
+	arr3 := make([]int, N)
 	copy(arr2, arr1)
+	copy(arr3, arr1)
 
 	helper.TestSort(MergeSort2.MergeSort, arr1)
 	helper.TestSort(QuickSort.Sort, arr2)
+	helper.TestSort(QuickSort2Ways.Sort, arr3)
 
 	// 测试2 测试近乎有序的数组
 	// 但是对于近乎有序的数组, 我们的快速排序算法退化成了O(n^2)级别的算法
@@ -32,9 +36,11 @@ func main() {
 
 	arr1 = helper.GenerateNearlyOrderedArray(N, swapTimes)
 	copy(arr2, arr1)
+	copy(arr3, arr1)
 
 	helper.TestSort(MergeSort2.MergeSort, arr1)
 	helper.TestSort(QuickSort.Sort, arr2)
+	helper.TestSort(QuickSort2Ways.Sort, arr3)
 
 	// 测试3 很多重复值的数据
 	fmt.Println("Test for random array, size =", N, ", random range [0, ", N, "]")
@@ -42,8 +48,9 @@ func main() {
 	arr1 = helper.GenerateRandomArray(N, 0, 10)
 	arr2 = make([]int, N)
 	copy(arr2, arr1)
+	copy(arr3, arr1)
 
 	helper.TestSort(MergeSort2.MergeSort, arr1)
 	helper.TestSort(QuickSort.Sort, arr2)
-
+	helper.TestSort(QuickSort2Ways.Sort, arr3)
 }
