@@ -1,13 +1,13 @@
 package MaxHeap
 
 type MaxHeap struct {
-	data []int
+	data  []int
 	count int
 }
 
 // 构造一个空堆, 可容纳capacity个元素
 func GetMaxHeap(capacity int) *MaxHeap {
-	data := make([]int, capacity + 1)
+	data := make([]int, capacity+1)
 	count := 0
 
 	return &MaxHeap{data, count}
