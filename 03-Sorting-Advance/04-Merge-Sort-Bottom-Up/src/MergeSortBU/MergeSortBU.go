@@ -5,7 +5,9 @@ import "math"
 // 将 arr[l...mid] 和 arr[mid+1...r] 两部分归并
 func merge(arr []int, l int, mid int, r int) {
 	aux := make([]int, r-l+1)
-	copy(aux, arr)
+	for i := l; i <= r; i++ {
+		aux[i-l] = arr[i]
+	}
 
 	// 初始化，i指向左半部分的起始索引位置l；j指向右半部分起始索引位置mid+1
 	i := l
