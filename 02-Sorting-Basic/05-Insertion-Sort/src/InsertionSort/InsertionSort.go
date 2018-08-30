@@ -5,7 +5,7 @@ import (
 )
 
 func Sort(arr []int, length int) {
-	for i := 0; i < length-1; i++ {
+	for i := 1; i < length; i++ {
 		// 写法 1
 		/*for j := i + 1; j > 0; j-- {
 			if arr[j] < arr[j-1] {
@@ -16,7 +16,7 @@ func Sort(arr []int, length int) {
 		}*/
 
 		// 写法 2
-		for j := i + 1; j > 0 && arr[j] < arr[j-1]; j-- {
+		for j := i; j > 0 && arr[j] < arr[j-1]; j-- {
 			swap(arr, j-1, j)
 		}
 	}
