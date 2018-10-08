@@ -14,6 +14,23 @@ func GetMaxHeap(capacity int) *MaxHeap {
 	return &MaxHeap{data, count, capacity}
 }
 
+// 构造一个已排序的堆
+func GetSortedMaxHeap(arr []int, n int) *MaxHeap {
+	maxHeap := &MaxHeap{}
+	maxHeap.capacity = n
+	maxHeap.data = make([]int, n+1)
+	for i := 0; i < n; i++ {
+		maxHeap.data[i+1] = arr[i]
+	}
+	maxHeap.count = n
+
+	for i := n/2; i >= 1; i-- {
+		maxHeap.shiftDown(i)
+	}
+
+	return maxHeap
+}
+
 // 返回堆中的元素个数
 func (h *MaxHeap) Size() int {
 	return h.count
@@ -57,7 +74,7 @@ func (h *MaxHeap) shiftUp(k int) {
 func (h *MaxHeap) shiftDown(k int) {
 	for 2*k <= h.count {
 		j := 2 * k
-		if (j+1 <= h.count && h.data[j+1] > h.data[j]) {
+		if j+1 <= h.count && h.data[j+1] > h.data[j] {
 			j++
 		}
 		if h.data[k] >= h.data[j] {
